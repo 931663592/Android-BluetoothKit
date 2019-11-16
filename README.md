@@ -1,6 +1,7 @@
 # BluetoothKit---Android Bluetooth Framework
 
 这个库用于Android蓝牙BLE设备通信，支持设备扫描，连接，读写，通知。  
+
 原项目地址:https://github.com/dingjikerbo/Android-BluetoothKit
 
 
@@ -27,9 +28,7 @@
 
 1、在Android Studio的build.gradle中，在dependencies里添加一行:
 
-
-    compile 'com.inuker.bluetooth:library:1.4.0'
-
+    compile 'com.github.931663592:Android-BluetoothKit:v1.0'
 
 如果是Eclipse，可以导入bluetoothkit.jar，在AndroidManifest.xml中添加如下：
 
@@ -277,6 +276,17 @@ int status = mClient.getConnectStatus(MAC);
 mClient.disconnect(MAC);
 ```
 
+### **● 蓝牙4.2以上修改Mtu**
+
+```Java
+mClient.requestMtu(MAC, mtu, new BleMtuResponse() {
+    @Override
+    public void onResponse(int code, Integer data) {
+        
+    }
+});
+```
+
 ### **● 读Characteristic**
 ```Java
 mClient.read(MAC, serviceUUID, characterUUID, new BleReadResponse() {
@@ -323,7 +333,7 @@ mClient.writeNoRsp(MAC, serviceUUID, characterUUID, bytes, new BleWriteResponse(
 mClient.readDescriptor(MAC, serviceUUID, characterUUID, descriptorUUID, new BleReadResponse() {
     @Override
     public void onResponse(int code, byte[] data) {
-
+    
     }
 });
 ```
