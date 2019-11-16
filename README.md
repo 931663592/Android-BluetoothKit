@@ -26,10 +26,19 @@
 
 # **用法**
 
-1、在Android Studio的build.gradle中，在dependencies里添加一行:
+1、配置Android Studio的build.gradle文件:
 
-    compile 'com.github.931663592:Android-BluetoothKit:v1.0'
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
 
+	dependencies {
+	        implementation 'com.github.931663592:Android-BluetoothKit:Tag'
+	}
+    
 如果是Eclipse，可以导入bluetoothkit.jar，在AndroidManifest.xml中添加如下：
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
