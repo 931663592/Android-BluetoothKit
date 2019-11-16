@@ -31,29 +31,29 @@
 
 
 如果是Eclipse，可以导入bluetoothkit.jar，在AndroidManifest.xml中添加如下：
-```
-<uses-permission android:name="android.permission.BLUETOOTH" />
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-<uses-feature
-    android:name="android.hardware.bluetooth_le"
-    android:required="true" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-<application
-    android:label="@string/app_name">
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
 
-    <service
-        android:name="com.inuker.bluetooth.library.BluetoothService" />
-</application>
-```
+    <application
+        android:label="@string/app_name">
+
+        <service
+            android:name="com.inuker.bluetooth.library.BluetoothService" />
+    </application>
+
 
 2、创建一个BluetoothClient，建议作为一个全局单例，管理所有BLE设备的连接。 
 
-```Java
-BluetoothClient mClient = new BluetoothClient(context);
-```
+
+    BluetoothClient mClient = new BluetoothClient(context);
+
 
 所有接口都通过BluetoothClient调用，涉及的常量如回调的错误码都在Constants类中。
 
