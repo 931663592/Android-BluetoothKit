@@ -4,6 +4,8 @@
 
 原项目地址：https://github.com/dingjikerbo/Android-BluetoothKit
 
+release版本增加修改蓝牙Mtu功能
+
 
 ## 这套框架存在的意义
 
